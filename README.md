@@ -1,6 +1,6 @@
 # n8n Skills
 
-[English](README.md) | [繁體中文](README.zh-TW.md)
+[English](README.md)
 
 > Supported n8n version: v2.2.6
 
