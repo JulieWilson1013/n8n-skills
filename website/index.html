@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>n8n Skills - AI 助理的 n8n 工作流程知識庫</title>
+    <meta name="title" content="n8n Skills - AI 助理的 n8n 工作流程知識庫">
+    <meta name="description"
+        content="讓 AI 助理成為你的 n8n 工作流程專家。包含 545 個節點的完整知識庫，支援 Claude Code、Claude.ai Web 和 Claude Desktop。">
+    <meta name="keywords"
+        content="n8n, workflow automation, AI assistant, Claude, skill pack, n8n nodes, 工作流程自動化, n8n 節點">
+    <meta name="author" content="Frank Chen">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.frankchen.tw/n8n-skills/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.frankchen.tw/n8n-skills/">
+    <meta property="og:title" content="n8n Skills - AI 助理的 n8n 工作流程知識庫">
+    <meta property="og:description"
+        content="讓 AI 助理成為你的 n8n 工作流程專家。包含 545 個節點的完整知識庫，支援 Claude Code、Claude.ai Web 和 Claude Desktop。">
+    <meta property="og:locale" content="zh_TW">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.frankchen.tw/n8n-skills/">
+    <meta property="twitter:title" content="n8n Skills - AI 助理的 n8n 工作流程知識庫">
+    <meta property="twitter:description"
+        content="讓 AI 助理成為你的 n8n 工作流程專家。包含 545 個節點的完整知識庫，支援 Claude Code、Claude.ai Web 和 Claude Desktop。">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#0f172a">
+
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://github.com" crossorigin>
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="i18n.js"></script>
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "n8n Skills",
+      "applicationCategory": "DeveloperApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "operatingSystem": "Cross-platform",
+      "description": "讓 AI 助理成為你的 n8n 工作流程專家。包含 545 個節點的完整知識庫，支援 Claude Code、Claude.ai Web 和 Claude Desktop。",
+      "author": {
+        "@type": "Person",
+        "name": "Frank Chen"
+      },
+      "url": "https://www.frankchen.tw/n8n-skills/",
+      "screenshot": "https://www.frankchen.tw/n8n-skills/",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "ratingCount": "1"
+      }
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Fixed Language Toggle Button -->
+    <button id="lang-toggle" class="lang-toggle-fixed">
+        <span class="lang-icon">🌐</span>
+        <span class="lang-text"></span>
+    </button>
+
+    <!-- Sticky Navbar -->
+    <nav id="navbar" class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand">n8n Skills</div>
+            <div class="navbar-buttons">
+                <a href="https://github.com/haunchen/n8n-skills" class="btn btn-primary btn-nav" target="_blank"
+                    rel="noopener noreferrer" data-i18n-aria="aria.githubProject">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                        <path
+                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                    </svg>
+                    GitHub
+                </a>
+                <a href="https://github.com/haunchen/n8n-skills/releases" class="btn btn-secondary btn-nav"
+                    target="_blank" rel="noopener noreferrer" data-i18n="nav.getStarted"
+                    data-i18n-aria="aria.downloadLatest">開始使用</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="license-badge">
+                    <span>Open Source MIT License</span>
+                </div>
+                <h1 class="hero-title">n8n Skills</h1>
+                <p class="hero-subtitle" data-i18n="hero.subtitle">讓 AI 助理成為你的 n8n 工作流程專家</p>
+                <p class="hero-description" data-i18n="hero.description">545 個節點的完整知識庫，定期更新，智慧排序</p>
+                <div class="hero-buttons">
+                    <a href="https://github.com/haunchen/n8n-skills" class="btn btn-primary" target="_blank"
+                        rel="noopener noreferrer" data-i18n-aria="aria.githubProject">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                            <path
+                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                        </svg>
+                        GitHub
+                    </a>
+                    <a href="https://github.com/haunchen/n8n-skills/releases" class="btn btn-secondary" target="_blank"
+                        rel="noopener noreferrer" data-i18n="nav.getStarted"
+                        data-i18n-aria="aria.downloadLatest">開始使用</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">545</div>
+                    <div class="stat-label" data-i18n="stats.nodes">n8n 節點</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label" data-i18n="stats.categories">主要分類</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">20</div>
+                    <div class="stat-label" data-i18n="stats.templates">工作流程範本</div>
+                </div>
+                <div class="stat-card stat-card-clickable" id="community-stats-card">
+                    <div class="stat-number">30</div>
+                    <div class="stat-label" data-i18n="stats.communityPackages">社群套件</div>
+                    <div class="stat-expand-hint" data-i18n="stats.clickToExpand">點擊展開</div>
+                </div>
+            </div>
+            <!-- Community Packages Section -->
+            <div class="community-packages-section" id="community-packages-section">
+                <div class="community-packages-header" id="community-packages-toggle">
+                    <h3 class="community-packages-title" data-i18n="community.title">社群套件推薦</h3>
+                    <span class="community-packages-toggle-icon">▼</span>
+                </div>
+                <div class="community-packages-content" id="community-packages-content">
+                    <!-- BEGIN COMMUNITY_PACKAGES_LIST -->
+        <div class="community-packages-grid">
+            <div class="community-package-card" data-category="communication">
+                <div class="package-header">
+                    <span class="package-name">n8n-nodes-evolution-api</span>
+                    <span class="package-category" data-category="communication">communication</span>
+                </div>
+                <p class="package-description">A Evolution API é um hub de canais com foco no WhatsApp</p>
+                <a href="https://www.npmjs.com/package/n8n-nodes-evolution-api" class="package-npm-link" target="_blank" rel="noopener noreferrer">
+                    <svg class="npm-icon" viewBox="0 0 24 24" width="16" height="16">
+                        <path fill="currentColor" d="M0 0v24h24V0H0zm19.2 19.2H12V7.2h3.6v8.4h3.6V4.8H4.8v14.4h14.4v-4.8z"/>
+                    </svg>
+                    npm
+                </a>
+            </div>
+            <div class="community-package-card" data-category="ai-tools">
+                <div class="package-header">
+                    <span class="package-name">@elevenlabs/n8n-nodes-elevenlabs</span>
+                    <span class="package-category" data-category="ai-tools">ai-tools</span>
+                </div>
+                <p class="package-description">Official ElevenLabs node for n8n</p>
+                <a href="https://www.npmjs.com/package/@elevenlabs/n8n-nodes-elevenlabs" class="package-npm-link" target="_blank" rel="noopener noreferrer">
+                    <svg class="npm-icon" viewBox="0 0 24 24" width="16" height="16">
+                        <path fill="currentColor" d="M0 0v24h24V0H0zm19.2 19.2H12V7.2h3.6v8.4h3.6V4.8H4.8v14.4h14.4v-4.8z"/>
+                    </svg>
+                    npm
+                </a>
+            </div>
+            <div class="community-package-card" data-category="ai-tools">
+                <div class="package-header">
+                    <span class="package-name">n8n-nodes-mcp</span>
+                    <span class="package-category" data-category="ai-tools">ai-tools</span>
+                </div>
+                <p class="package-description">MCP nodes for n8n </p>
+                <a href="https://www.npmjs.com/package/n8n-nodes-mcp" class="package-npm-link" target="_blank" rel="noopener noreferrer">
+                    <svg class="npm-icon" viewBox="0 0 24 24" width="16" height="16">
+                        <path fill="currentColor" d="M0 0v24h24V0H0zm19.2 19.2H12V7.2h3.6v8.4h3.6V4.8H4.8v14.4h14.4v-4.8z"/>
+                    </svg>
+                    npm
+                </a>
+            </div>
+            <div class="community-package-card" data-category="data-processing">
+                <div class="package-header">
+                    <span class="package-name">n8n-nodes-text-manipulation</span>
+                    <span class="package-category" data-category="data-processing">data-processing</span>
+                </div>
+                <p class="package-description">This node allows to modify texts.</p>
+                <a href="https://www.npmjs.com/package/n8n-nodes-text-manipulation" class="package-npm-link" target="_blank" rel="noopener noreferrer">
+                    <svg class="npm-icon" viewBox="0 0 24 24" width="16" height="16">
+                        <path fill="currentColor" d="M0 0v24h24V0H0zm19.2 19.2H12V7.2h3.6v8.4h3.6V4.8H4.8v14.4h14.4v-4.8z"/>
+                    </svg>
+                    npm
+                </a>
+            </div>
+            <div class="community-package-card" data-category="ai-tools">
+                <div class="package-header">
+                    <span class="package-name">n8n-nodes-elevenlabs</span>
+                    <span class="package-category" data-category="ai-tools">ai-tools</span>
+                </div>
+                <p class="package-description">Complete implementation of ElevenLabs AI voice generation into n8n workflows.</p>
+                <a href="https://www.npmjs.com/package/n8n-nodes-elevenlabs" class="package-npm-link" target="_blank" rel="noopener noreferrer">
+                    <svg class="npm-icon" viewBox="0 0 24 24" width="16" height="16">
+                        <path fill="currentColor" d="M0 0v24h24V0H0zm19.2 19.2H12V7.2h3.6v8.4h3.6V4.8H4.8v14.4h14.4v-4.8z"/>
+                    </svg>
+                    npm
+                </a>
+            </div>
+            <div class="community-package-card" data-category="communication">
+                <div class="package-header">
+                    <span class="package-name">n8n-nodes-chatwoot</span>
+                    <span class="package-category" data-category="communication">communication</span>
+                </div>
+                <p class="package-description">This is an n8n community node. It lets you use ChatWoot in your n8n workflows.</p>
+                <a href="https://www.npmjs.com/package/n8n-nodes-chatwoot" class="package-npm-link" target="_blank" rel="noopener noreferrer">
+                    <svg class="npm-icon" viewBox="0 0 24 24" width="16" height="16">
+                        <path fill="currentColor" d="M0 0v24h24V0H0zm19.2 19.2H12V7.2h3.6v8.4h3.6V4.8H4.8v14.4h14.4v-4.8z"/>
+                    </svg>
+                    npm
+                </a>
+            </div>
+            <div class="community-package-card" data-category="utilities">
+                <div class="package-header">
+                    <span class="package-name">n8n-nodes-globals</span>
+                    <span class="package-category" data-category="utilities">utilities</span>
+                </div>
+                <p class="package-description">N8N community node that allows users to create global constants and use them in all their workflows</p>
+                <a href="https://www.npmjs.com/package/n8n-nodes-globals" class="package-npm-link" target="_blank" rel="noopener noreferrer">
+                    <svg class="npm-icon" viewBox="0 0 24 24" width="16" height="16">
+                        <path fill="currentColor" d="M0 0v24h24V0H0zm19.2 19.2H12V7.2h3.6v8.4h3.6V4.8H4.8v14.4h14.4v-4.8z"/>
+                    </svg>
+                    npm
+                </a>
+            </div>
+            <div class="community-package-card" data-category="ai-tools">
+                <div class="package-header">
+                    <span class="package-name">n8n-nodes-zohozeptomail</span>
+                    <span class="package-category" data-category="ai-tools">ai-tools</span>
+                </div>
+                <p class="package-description">This is an n8n community node. It lets you use Zoho ZeptoMail in your n8n workflows.</p>
+                <a href="https://www.npmjs.com/package/n8n-nodes-zohozeptomail" class="package-npm-link" target="_blank" rel="noopener noreferrer">
+                    <svg class="npm-icon" viewBox="0 0 24 24" width="16" height="16">
+                        <path fill="currentColor" d="M0 0v24h24V0H0zm19.2 19.2H12V7.2h3.6v8.4h3.6V4.8H4.8v14.4h14.4v-4.8z"/>
+                    </svg>
+                    npm
+                </a>
+            </div>
+            <div class="community-package-card" data-category="utilities">
+                <div class="package-header">
+                    <span class="package-name">n8n-nodes-kommo</span>
+                    <span class="package-category" data-category="utilities">utilities</span>
+                </div>
+                <p class="package-description">n8n node for Kommo Api</p>
+                <a href="https://www.npmjs.com/package/n8n-nodes-kommo" class="package-npm-link" target="_blank" rel="noopener noreferrer">
+                    <svg class="npm-icon" viewBox="0 0 24 24" width="16" height="16">
+                        <path fill="currentColor" d="M0 0v24h24V0H0zm19.2 19.2H12V7.2h3.6v8.4h3.6V4.8H4.8v14.4h14.4v-4.8z"/>
+                    </svg>
+                    npm
+                </a>
+            </div>
+            <div class="community-package-card" data-category="communication">
+                <div class="package-header">
+                    <span class="package-name">n8n-nodes-evolution-api-media-downloader</span>
+                    <span class="package-category" data-category="communication">communication</span>
+                </div>
+                <p class="package-description">Download Media from Evolution API data message</p>
+                <a href="https://www.npmjs.com/package/n8n-nodes-evolution-api-media-downloader" class="package-npm-link" target="_blank" rel="noopener noreferrer">
+                    <svg class="npm-icon" viewBox="0 0 24 24" width="16" height="16">
+                        <path fill="currentColor" d="M0 0v24h24V0H0zm19.2 19.2H12V7.2h3.6v8.4h3.6V4.8H4.8v14.4h14.4v-4.8z"/>
+                    </svg>
+                    npm
+                </a>
+            </div>
+            <div class="community-package-card" data-category="data-processing">
+                <div class="package-header">
+                    <span class="package-name">n8n-nodes-datastore</span>
+                    <span class="package-category" data-category="data-processing">data-processing</span>
+                </div>
+                <p class="package-description">Datastore for n8n within the workflow</p>
+                <a href="https://www.npmjs.com/package/n8n-nodes-datastore" class="package-npm-link" target="_blank" rel="noopener noreferrer">
+                    <svg class="npm-icon" viewBox="0 0 24 24" width="16" height="16">
+                        <path fill="currentColor" d="M0 0v24h24V0H0zm19.2 19.2H12V7.2h3.6v8.4h3.6V4.8H4.8v14.4h14.4v-4.8z"/>
+                    </svg>
+                    npm
+                </a>
+            </div>
+            <div class="community-package-card" data-category="ai-tools">
+                <div class="package-header">
+                    <span class="package-name">@mendable/n8n-nodes-firecrawl</span>
+                    <span class="package-category" data-category="ai-tools">ai-tools</span>
+                </div>
+                <p class="package-description">Official Firecrawl nodes for n8n - scrape, crawl, map, search, and extract data from websites. Supports AI Agent tool us...</p>
+                <a href="https://www.npmjs.com/package/@mendable/n8n-nodes-firecrawl" class="package-npm-link" target="_blank" rel="noopener noreferrer">
+                    <svg class="npm-icon" viewBox="0 0 24 24" width="16" height="16">
+                        <path fill="currentColor" d="M0 0v24h24V0H0zm19.2 19.2H12V7.2h3.6v8.4h3.6V4.8H4.8v14.4h14.4v-4.8z"/>
+                    </svg>
+                    npm
+                </a>
+            </div>
+            <div class="community-package-card" data-category="document">
+                <div class="package-header">
+                    <span class="package-name">n8n-nodes-pdfkit</span>
+                    <span class="package-category" data-category="document">document</span>
+                </div>
+                <p class="package-description">Node for using PDFKit to tranform images into PDF, more functionality may be added later.</p>
+                <a href="https://www.npmjs.com/package/n8n-nodes-pdfkit" class="package-npm-link" target="_blank" rel="noopener noreferrer">
+                    <svg class="npm-icon" viewBox="0 0 24 24" width="16" height="16">
+                        <path fill="currentColor" d="M0 0v24h24V0H0zm19.2 19.2H12V7.2h3.6v8.4h3.6V4.8H4.8v14.4h14.4v-4.8z"/>
+                    </svg>
+                    npm
+                </a>
+            </div>
+            <div class="community-package-card" data-category="utilities">
+                <div class="package-header">
+                    <span class="package-name">n8n-nodes-cronlytic</span>
+                    <span class="package-category" data-category="utilities">utilities</span>
+                </div>
+                <p class="package-description">n8n community node for Cronlytic advanced cron scheduling</p>
+                <a href="https://www.npmjs.com/package/n8n-nodes-cronlytic" class="package-npm-link" target="_blank" rel="noopener noreferrer">
+                    <svg class="npm-icon" viewBox="0 0 24 24" width="16" height="16">
+                        <path fill="currentColor" d="M0 0v24h24V0H0zm19.2 19.2H12V7.2h3.6v8.4h3.6V4.8H4.8v14.4h14.4v-4.8z"/>
+                    </svg>
+                    npm
+                </a>
+            </div>
+            <div class="community-package-card" data-category="utilities">
+                <div class="package-header">
+                    <span class="package-name">@apify/n8n-nodes-apify</span>
+                    <span class="package-category" data-category="utilities">utilities</span>
+                </div>
+                <p class="package-description">n8n nodes for Apify</p>
+                <a href="https://www.npmjs.com/package/@apify/n8n-nodes-apify" class="package-npm-link" target="_blank" rel="noopener noreferrer">
+                    <svg class="npm-icon" viewBox="0 0 24 24" width="16" height="16">
+                        <path fill="currentColor" d="M0 0v24h24V0H0zm19.2 19.2H12V7.2h3.6v8.4h3.6V4.8H4.8v14.4h14.4v-4.8z"/>
+                    </svg>
+                    npm
+                </a>
+            </div>
+            <div class="community-package-card" data-category="ai-tools">
+                <div class="package-header">
+                    <span class="package-name">n8n-nodes-deepseek</span>
+                    <span class="package-category" data-category="ai-tools">ai-tools</span>
+                </div>
+                <p class="package-description">A user-friendly DeepSeek AI node, similar to OpenAI, designed to enhance your workflow. npm link: https://www.npmjs.com/...</p>
+                <a href="https://www.npmjs.com/package/n8n-nodes-deepseek" class="package-npm-link" target="_blank" rel="noopener noreferrer">
+                    <svg class="npm-icon" viewBox="0 0 24 24" width="16" height="16">
+                        <path fill="currentColor" d="M0 0v24h24V0H0zm19.2 19.2H12V7.2h3.6v8.4h3.6V4.8H4.8v14.4h14.4v-4.8z"/>
+                    </svg>
+                    npm
+                </a>
+            </div>
+            <div class="community-package-card" data-category="communication">
+                <div class="package-header">
+                    <span class="package-name">@devlikeapro/n8n-nodes-chatwoot</span>
+                    <span class="package-category" data-category="communication">communication</span>
+                </div>
+                <p class="package-description">n8n node to connect with ChatWoot</p>
+                <a href="https://www.npmjs.com/package/@devlikeapro/n8n-nodes-chatwoot" class="package-npm-link" target="_blank" rel="noopener noreferrer">
+                    <svg class="npm-icon" viewBox="0 0 24 24" width="16" height="16">
+                        <path fill="currentColor" d="M0 0v24h24V0H0zm19.2 19.2H12V7.2h3.6v8.4h3.6V4.8H4.8v14.4h14.4v-4.8z"/>
+                    </svg>
+                    npm
+                </a>
+            </div>
+            <div class="community-package-card" data-category="communication">
+                <div class="package-header">
+                    <span class="package-name">n8n-nodes-imap</span>
+                    <span class="package-category" data-category="communication">communication</span>
+                </div>
+                <p class="package-description">This node allows you to connect to an IMAP server and retrieve emails.</p>
+                <a href="https://www.npmjs.com/package/n8n-nodes-imap" class="package-npm-link" target="_blank" rel="noopener noreferrer">
+                    <svg class="npm-icon" viewBox="0 0 24 24" width="16" height="16">
+                        <path fill="currentColor" d="M0 0v24h24V0H0zm19.2 19.2H12V7.2h3.6v8.4h3.6V4.8H4.8v14.4h14.4v-4.8z"/>
+                    </svg>
+                    npm
+                </a>
+            </div>
+            <div class="community-package-card" data-category="ai-tools">
+                <div class="package-header">
+                    <span class="package-name">@splainez/n8n-nodes-phonenumber-parser</span>
+                    <span class="package-category" data-category="ai-tools">ai-tools</span>
+                </div>
+                <p class="package-description">Parse a phone number and return its information</p>
+                <a href="https://www.npmjs.com/package/@splainez/n8n-nodes-phonenumber-parser" class="package-npm-link" target="_blank" rel="noopener noreferrer">
+                    <svg class="npm-icon" viewBox="0 0 24 24" width="16" height="16">
+                        <path fill="currentColor" d="M0 0v24h24V0H0zm19.2 19.2H12V7.2h3.6v8.4h3.6V4.8H4.8v14.4h14.4v-4.8z"/>
+                    </svg>
+                    npm
+                </a>
+            </div>
+            <div class="community-package-card" data-category="communication">
+                <div class="package-header">
+                    <span class="package-name">@devlikeapro/n8n-nodes-waha</span>
+                    <span class="package-category" data-category="communication">communication</span>
+                </div>
+                <p class="package-description">n8n to connect with WAHA (Whatsapp HTTP API)</p>
+                <a href="https://www.npmjs.com/package/@devlikeapro/n8n-nodes-waha" class="package-npm-link" target="_blank" rel="noopener noreferrer">
+                    <svg class="npm-icon" viewBox="0 0 24 24" width="16" height="16">
+                        <path fill="currentColor" d="M0 0v24h24V0H0zm19.2 19.2H12V7.2h3.6v8.4h3.6V4.8H4.8v14.4h14.4v-4.8z"/>
+                    </svg>
+                    npm
+                </a>
+            </div>
+            <div class="community-package-card" data-category="utilities">
+                <div class="package-header">
+                    <span class="package-name">n8n-nodes-rd-station-crm</span>
+                    <span class="package-category" data-category="utilities">utilities</span>
+                </div>
+                <p class="package-description">Nós personalizados do n8n para integração com a API do RD Station CRM (v1)</p>
+                <a href="https://www.npmjs.com/package/n8n-nodes-rd-station-crm" class="package-npm-link" target="_blank" rel="noopener noreferrer">
+                    <svg class="npm-icon" viewBox="0 0 24 24" width="16" height="16">
+                        <path fill="currentColor" d="M0 0v24h24V0H0zm19.2 19.2H12V7.2h3.6v8.4h3.6V4.8H4.8v14.4h14.4v-4.8z"/>
+                    </svg>
+                    npm
+                </a>
+            </div>
+            <div class="community-package-card" data-category="web-scraping">
+                <div class="package-header">
+                    <span class="package-name">n8n-nodes-serpapi</span>
+                    <span class="package-category" data-category="web-scraping">web-scraping</span>
+                </div>
+                <p class="package-description">Official n8n node for SerpApi</p>
+                <a href="https://www.npmjs.com/package/n8n-nodes-serpapi" class="package-npm-link" target="_blank" rel="noopener noreferrer">
+                    <svg class="npm-icon" viewBox="0 0 24 24" width="16" height="16">
+                        <path fill="currentColor" d="M0 0v24h24V0H0zm19.2 19.2H12V7.2h3.6v8.4h3.6V4.8H4.8v14.4h14.4v-4.8z"/>
+                    </svg>
+                    npm
+                </a>
+            </div>
+            <div class="community-package-card" data-category="ai-tools">
+                <div class="package-header">
+                    <span class="package-name">n8n-nodes-mtai-zalo-test-trial</span>
+                    <span class="package-category" data-category="ai-tools">ai-tools</span>
+                </div>
+                <p class="package-description">Các node hỗ trợ Zalo cho n8n</p>
+                <a href="https://www.npmjs.com/package/n8n-nodes-mtai-zalo-test-trial" class="package-npm-link" target="_blank" rel="noopener noreferrer">
+                    <svg class="npm-icon" viewBox="0 0 24 24" width="16" height="16">
+                        <path fill="currentColor" d="M0 0v24h24V0H0zm19.2 19.2H12V7.2h3.6v8.4h3.6V4.8H4.8v14.4h14.4v-4.8z"/>
+                    </svg>
+                    npm
+                </a>
+            </div>
+            <div class="community-package-card" data-category="web-scraping">
+                <div class="package-header">
+                    <span class="package-name">@tavily/n8n-nodes-tavily</span>
+                    <span class="package-category" data-category="web-scraping">web-scraping</span>
+                </div>
+                <p class="package-description">A community node for n8n to integrate Tavily API for web search and content extraction.</p>
+                <a href="https://www.npmjs.com/package/@tavily/n8n-nodes-tavily" class="package-npm-link" target="_blank" rel="noopener noreferrer">
+                    <svg class="npm-icon" viewBox="0 0 24 24" width="16" height="16">
+                        <path fill="currentColor" d="M0 0v24h24V0H0zm19.2 19.2H12V7.2h3.6v8.4h3.6V4.8H4.8v14.4h14.4v-4.8z"/>
+                    </svg>
+                    npm
+                </a>
+            </div>
+            <div class="community-package-card" data-category="utilities">
+                <div class="package-header">
+                    <span class="package-name">n8n-nodes-apify</span>
+                    <span class="package-category" data-category="utilities">utilities</span>
+                </div>
+                <p class="package-description">n8n nodes for Apify</p>
+                <a href="https://www.npmjs.com/package/n8n-nodes-apify" class="package-npm-link" target="_blank" rel="noopener noreferrer">
+                    <svg class="npm-icon" viewBox="0 0 24 24" width="16" height="16">
+                        <path fill="currentColor" d="M0 0v24h24V0H0zm19.2 19.2H12V7.2h3.6v8.4h3.6V4.8H4.8v14.4h14.4v-4.8z"/>
+                    </svg>
+                    npm
+                </a>
+            </div>
+            <div class="community-package-card" data-category="utilities">
+                <div class="package-header">
+                    <span class="package-name">n8n-nodes-thong-zalo-test-trial</span>
+                    <span class="package-category" data-category="utilities">utilities</span>
+                </div>
+                <p class="package-description">Các node hỗ trợ Zalo cho n8n</p>
+                <a href="https://www.npmjs.com/package/n8n-nodes-thong-zalo-test-trial" class="package-npm-link" target="_blank" rel="noopener noreferrer">
+                    <svg class="npm-icon" viewBox="0 0 24 24" width="16" height="16">
+                        <path fill="currentColor" d="M0 0v24h24V0H0zm19.2 19.2H12V7.2h3.6v8.4h3.6V4.8H4.8v14.4h14.4v-4.8z"/>
+                    </svg>
+                    npm
+                </a>
+            </div>
+            <div class="community-package-card" data-category="utilities">
+                <div class="package-header">
+                    <span class="package-name">n8n-nodes-qrcode</span>
+                    <span class="package-category" data-category="utilities">utilities</span>
+                </div>
+                <p class="package-description">n8n nodes to generate QRCode</p>
+                <a href="https://www.npmjs.com/package/n8n-nodes-qrcode" class="package-npm-link" target="_blank" rel="noopener noreferrer">
+                    <svg class="npm-icon" viewBox="0 0 24 24" width="16" height="16">
+                        <path fill="currentColor" d="M0 0v24h24V0H0zm19.2 19.2H12V7.2h3.6v8.4h3.6V4.8H4.8v14.4h14.4v-4.8z"/>
+                    </svg>
+                    npm
+                </a>
+            </div>
+            <div class="community-package-card" data-category="web-scraping">
+                <div class="package-header">
+                    <span class="package-name">n8n-nodes-firecrawl</span>
+                    <span class="package-category" data-category="web-scraping">web-scraping</span>
+                </div>
+                <p class="package-description">FireCrawl nodes for n8n</p>
+                <a href="https://www.npmjs.com/package/n8n-nodes-firecrawl" class="package-npm-link" target="_blank" rel="noopener noreferrer">
+                    <svg class="npm-icon" viewBox="0 0 24 24" width="16" height="16">
+                        <path fill="currentColor" d="M0 0v24h24V0H0zm19.2 19.2H12V7.2h3.6v8.4h3.6V4.8H4.8v14.4h14.4v-4.8z"/>
+                    </svg>
+                    npm
+                </a>
+            </div>
+            <div class="community-package-card" data-category="web-scraping">
+                <div class="package-header">
+                    <span class="package-name">n8n-nodes-puppeteer</span>
+                    <span class="package-category" data-category="web-scraping">web-scraping</span>
+                </div>
+                <p class="package-description">n8n node for browser automation using Puppeteer</p>
+                <a href="https://www.npmjs.com/package/n8n-nodes-puppeteer" class="package-npm-link" target="_blank" rel="noopener noreferrer">
+                    <svg class="npm-icon" viewBox="0 0 24 24" width="16" height="16">
+                        <path fill="currentColor" d="M0 0v24h24V0H0zm19.2 19.2H12V7.2h3.6v8.4h3.6V4.8H4.8v14.4h14.4v-4.8z"/>
+                    </svg>
+                    npm
+                </a>
+            </div>
+            <div class="community-package-card" data-category="ai-tools">
+                <div class="package-header">
+                    <span class="package-name">n8n-nodes-aistudio</span>
+                    <span class="package-category" data-category="ai-tools">ai-tools</span>
+                </div>
+                <p class="package-description">N8N nodes for Gemini API</p>
+                <a href="https://www.npmjs.com/package/n8n-nodes-aistudio" class="package-npm-link" target="_blank" rel="noopener noreferrer">
+                    <svg class="npm-icon" viewBox="0 0 24 24" width="16" height="16">
+                        <path fill="currentColor" d="M0 0v24h24V0H0zm19.2 19.2H12V7.2h3.6v8.4h3.6V4.8H4.8v14.4h14.4v-4.8z"/>
+                    </svg>
+                    npm
+                </a>
+            </div>
+        </div>
+                    <!-- END COMMUNITY_PACKAGES_LIST -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title" data-i18n="features.title">核心特色</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3 class="feature-title" data-i18n="features.comprehensive.title">全面的節點知識庫</h3>
+                    <p class="feature-description" data-i18n="features.comprehensive.description">包含 542 個 n8n
+                        節點的詳細文件，按照 6 個主要分類組織，支援最新的 n8n v2.2.6</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3 class="feature-title" data-i18n="features.integration.title">多平台 AI 整合</h3>
+                    <p class="feature-description" data-i18n="features.integration.description">支援 Claude Code、Claude.ai
+                        Web 和 Claude Desktop，通過 Skill Pack 格式無縫整合</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title" data-i18n="features.priority.title">優先級排序</h3>
+                    <p class="feature-description" data-i18n="features.priority.description">
+                        基於使用頻率、文件完整度、社群受歡迎程度和通用性的多維度評分系統</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3 class="feature-title" data-i18n="features.updates.title">定期發布更新</h3>
+                    <p class="feature-description" data-i18n="features.updates.description">每週自動追蹤 n8n
+                        最新版本並發布更新，下載即可獲得最新內容</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📁</div>
+                    <h3 class="feature-title" data-i18n="features.structure.title">完整資源結構</h3>
+                    <p class="feature-description" data-i18n="features.structure.description">主 SKILL.md
+                        提供快速參考，resources/ 目錄包含按分類組織的詳細文件和範本</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title" data-i18n="howItWorks.title">如何使用</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title" data-i18n="howItWorks.step1.title">下載 n8n Skills</h3>
+                    <p class="step-description" data-i18n="howItWorks.step1.description">從 GitHub Releases 下載最新版本的 n8n
+                        Skills</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title" data-i18n="howItWorks.step2.title">安裝到 AI 助理</h3>
+                    <p class="step-description" data-i18n="howItWorks.step2.description">將 n8n Skills 導入你的 Claude
+                        Code、Web 或 Desktop</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title" data-i18n="howItWorks.step3.title">開始使用</h3>
+                    <p class="step-description" data-i18n="howItWorks.step3.description">詢問 AI 助理關於 n8n 節點和工作流程的問題</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation Section -->
+    <section class="installation" id="installation">
+        <div class="container">
+            <h2 class="section-title" data-i18n="installation.title">快速安裝</h2>
+            <p class="section-subtitle" data-i18n="installation.subtitle">選擇最適合你的安裝方式</p>
+            <div class="installation-grid">
+                <!-- Claude Code Plugin -->
+                <div class="install-card install-card-primary">
+                    <div class="install-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 17l6-6-6-6M12 19h8"/>
+                        </svg>
+                    </div>
+                    <h3 class="install-title" data-i18n="installation.plugin.title">Claude Code Plugin</h3>
+                    <p class="install-description" data-i18n="installation.plugin.description">兩步驟安裝</p>
+                    <div class="install-command">
+                        <code>/plugin marketplace add haunchen/n8n-skills-pack</code>
+                        <button class="copy-btn" data-copy="/plugin marketplace add haunchen/n8n-skills-pack" aria-label="Copy command">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="install-command">
+                        <code>/plugin install n8n-skills@n8n-skills-pack</code>
+                        <button class="copy-btn" data-copy="/plugin install n8n-skills@n8n-skills-pack" aria-label="Copy command">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <span class="install-badge" data-i18n="installation.plugin.badge">推薦</span>
+                </div>
+
+                <!-- Manual Install -->
+                <div class="install-card">
+                    <div class="install-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                    </div>
+                    <h3 class="install-title" data-i18n="installation.manual.title">手動安裝</h3>
+                    <p class="install-description" data-i18n="installation.manual.description">下載並複製到 skills 目錄</p>
+                    <a href="https://github.com/haunchen/n8n-skills/releases" class="btn btn-secondary install-btn" target="_blank" rel="noopener noreferrer">
+                        <span data-i18n="installation.manual.button">下載 ZIP</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title" data-i18n="categories.title">節點分類</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <h3 class="category-title" data-i18n="categories.core.title">核心節點</h3>
+                    <p class="category-description" data-i18n="categories.core.description">HTTP
+                        Request、Code、Webhook、Set、If、Merge 等基礎節點</p>
+                </div>
+                <div class="category-card">
+                    <h3 class="category-title" data-i18n="categories.apps.title">應用整合</h3>
+                    <p class="category-description" data-i18n="categories.apps.description">30+ 個熱門應用整合，包含
+                        Google、Slack、Discord 等</p>
+                </div>
+                <div class="category-card">
+                    <h3 class="category-title" data-i18n="categories.triggers.title">觸發器</h3>
+                    <p class="category-description" data-i18n="categories.triggers.description">Webhook、Schedule、Email
+                        等多種觸發方式</p>
+                </div>
+                <div class="category-card">
+                    <h3 class="category-title" data-i18n="categories.ai.title">AI 節點</h3>
+                    <p class="category-description" data-i18n="categories.ai.description">20+ 個 AI 相關節點，支援各種 AI 模型整合</p>
+                </div>
+                <div class="category-card">
+                    <h3 class="category-title" data-i18n="categories.database.title">資料庫</h3>
+                    <p class="category-description" data-i18n="categories.database.description">MongoDB、PostgreSQL、MySQL
+                        等資料庫連接器</p>
+                </div>
+                <div class="category-card">
+                    <h3 class="category-title" data-i18n="categories.tools.title">工具節點</h3>
+                    <p class="category-description" data-i18n="categories.tools.description">資料處理、檔案操作、格式轉換等實用工具</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- 左欄：品牌資訊 -->
+                <div class="footer-brand">
+                    <div class="footer-brand-header">
+                        <img src="assets/n8n-skills-icon.png" alt="n8n Skills Logo" class="footer-icon">
+                        <h3 class="footer-logo" data-i18n="footer.brandName">n8n Skills</h3>
+                    </div>
+                    <p class="footer-slogan" data-i18n="footer.slogan">讓 AI 助理成為你的 n8n 工作流程專家</p>
+                </div>
+
+                <!-- 中欄：產品資訊 -->
+                <div class="footer-links-group">
+                    <h4 class="footer-group-title" data-i18n="footer.productInfo">n8n Skills 的資訊</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="https://github.com/haunchen/n8n-skills" target="_blank"
+                                rel="noopener noreferrer">GitHub</a></li>
+                        <li><a href="https://github.com/haunchen/n8n-skills/releases" target="_blank"
+                                rel="noopener noreferrer">Releases</a></li>
+                        <li><a href="#features" data-i18n="footer.features">功能介紹</a></li>
+                        <li><a href="#how-it-works" data-i18n="footer.howToUse">如何使用</a></li>
+                    </ul>
+                </div>
+
+                <!-- 右欄：其他資源 -->
+                <div class="footer-links-group">
+                    <h4 class="footer-group-title" data-i18n="footer.otherResources">法蘭克的其他資源</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="https://www.frankchen.tw/" target="_blank" rel="noopener noreferrer"
+                                data-i18n="footer.home">首頁</a></li>
+                        <li><a href="https://www.frankchen.tw/n8n-resources/" target="_blank" rel="noopener noreferrer"
+                                data-i18n="footer.n8nTutorial">n8n 教學</a></li>
+                        <li><a href="https://www.frankchen.tw/personal/" target="_blank" rel="noopener noreferrer"
+                                data-i18n="footer.aboutMe">關於我</a></li>
+                        <li><a href="https://www.frankchen.tw/contact-frank/" target="_blank" rel="noopener noreferrer"
+                                data-i18n="footer.contactMe">聯絡我</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 底部版權 -->
+            <div class="footer-bottom">
+                <p class="footer-copyright" data-i18n="footer.copyright">© 2025 法蘭克 All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

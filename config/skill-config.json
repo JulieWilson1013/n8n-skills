@@ -1,0 +1,46 @@
+{
+  "n8n_version": "1.121.0",
+  "build_date": "2025-12-02T02:28:51.790Z",
+  "max_nodes_in_main_skill": 10,
+  "high_priority_node_count": 50,
+  "merge_remaining_nodes": true,
+  "max_nodes_per_merged_file": 100,
+  "categories": {
+    "core": {
+      "name": "Core Nodes",
+      "priority": 1,
+      "max_nodes": 10
+    },
+    "app": {
+      "name": "Application Integration",
+      "priority": 2,
+      "max_nodes": 30
+    },
+    "trigger": {
+      "name": "Triggers",
+      "priority": 3,
+      "max_nodes": 10
+    },
+    "ai": {
+      "name": "AI Nodes",
+      "priority": 4,
+      "max_nodes": 20
+    },
+    "database": {
+      "name": "Databases",
+      "priority": 5,
+      "max_nodes": 10
+    },
+    "utility": {
+      "name": "Utility Nodes",
+      "priority": 6,
+      "max_nodes": 10
+    }
+  },
+  "output_format": "markdown",
+  "include_examples": true,
+  "include_templates": true,
+  "max_template_examples": 100,
+  "docs_summary_max_length": 300,
+  "property_max_count": 10
+}

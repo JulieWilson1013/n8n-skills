@@ -1,0 +1,88 @@
+{
+  "categories": {
+    "core": {
+      "name": "Core Nodes",
+      "description": "The most basic and commonly used n8n nodes",
+      "icon": "⚙️",
+      "priority": 1,
+      "nodes": [
+        "httpRequest",
+        "code",
+        "webhook",
+        "set",
+        "if",
+        "merge",
+        "split",
+        "function",
+        "executeWorkflow",
+        "loop"
+      ]
+    },
+    "app": {
+      "name": "Application Integration",
+      "description": "Third-party service integration nodes",
+      "icon": "🔌",
+      "priority": 2,
+      "subcategories": {
+        "communication": ["slack", "discord", "telegram", "microsoftTeams"],
+        "productivity": ["googleSheets", "notion", "airtable", "monday"],
+        "development": ["github", "gitlab", "jira", "linear"],
+        "marketing": ["mailchimp", "sendgrid", "hubspot", "salesforce"],
+        "storage": ["googleDrive", "dropbox", "s3", "box"]
+      }
+    },
+    "trigger": {
+      "name": "Trigger Nodes",
+      "description": "Nodes that initiate workflows",
+      "icon": "⚡",
+      "priority": 3,
+      "nodes": [
+        "cronTrigger",
+        "manualTrigger",
+        "webhookTrigger",
+        "emailTrigger",
+        "scheduleTrigger"
+      ]
+    },
+    "ai": {
+      "name": "AI Nodes",
+      "description": "AI and machine learning related nodes",
+      "icon": "🤖",
+      "priority": 4,
+      "subcategories": {
+        "llm": ["openai", "anthropic", "googlePalm", "huggingFace"],
+        "langchain": ["langchain", "vectorStore", "memoryManager"],
+        "agents": ["aiAgent", "toolCalling"]
+      }
+    },
+    "database": {
+      "name": "Database Nodes",
+      "description": "Database operation nodes",
+      "icon": "🗄️",
+      "priority": 5,
+      "nodes": [
+        "postgres",
+        "mysql",
+        "mongodb",
+        "redis",
+        "supabase",
+        "firebase"
+      ]
+    },
+    "utility": {
+      "name": "Utility Nodes",
+      "description": "Practical utility nodes",
+      "icon": "🛠️",
+      "priority": 6,
+      "nodes": [
+        "dateTime",
+        "crypto",
+        "htmlExtract",
+        "xml",
+        "json",
+        "compress",
+        "readPdf"
+      ]
+    }
+  }
+}
