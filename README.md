@@ -45,15 +45,6 @@ Automation Enthusiasts
 
 This package provides AI assistants with the ability to access n8n node information, helping AI understand and operate n8n workflows.
 
-### Key Features
-
-- Provides complete information on n8n nodes
-- Supports node search and exploration
-- Node configuration validation
-- Workflow structure analysis
-- Support for 30+ popular community packages
-- Community packages organized by category (AI tools, communication, web scraping, etc.)
-
 ### Technical Architecture
 
 This project is built upon the [n8n-mcp](https://github.com/czlonkowski/n8n-mcp) architecture, converted into an n8n Skill Pack generator with added priority ranking, node grouping, and documentation integration features. n8n Skills adopts a five-layer modular architecture (collectors, parsers, organizers, generators, build scripts), automatically collecting information from n8n NPM packages, APIs, and documentation, and generating skill packs best suited for AI assistants through intelligent ranking.
