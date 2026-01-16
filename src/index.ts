@@ -1,14 +1,3 @@
-/**
- * Copyright (c) 2025 Frank Chen @ www.frankchen.tw/personal
- * SPDX-License-Identifier: MIT
- *
- * This file is part of n8n-skills project.
- */
-
-/**
- * n8n Skill Pack - 主要入口點
- * 匯出所有公開的類別、函數和類型
- */
 
 // 內部使用的 import
 import { NpmCollector, type SimplifiedNodeInfo } from './collectors/npm-collector';
